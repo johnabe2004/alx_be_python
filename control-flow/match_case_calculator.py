@@ -7,20 +7,20 @@ print("3. Multiplication (*)")
 print("4. Division (/)")
 operation = input("Choose the operation (+, -, *, /): ") 
 match operation:
-    case "+":
-        result = num1 + num2
-        print("The result of", num1 ,"+", num2,"is:", result)
-    case "-":
-        result = num1 - num2
-        print("The result of", num1 ,"-", num2, "is:", result)
-    case "*":
-        result = num1 * num2
-        print("The result of", num1, "*", num2,"is:", result)
-    case "/":
-        if num2 != 0:
-            result = num1 / num2
-            print ("The result of", num1," /", num2,"is:", result)
-        else:
-            print("Error! Division by zero is not allowed.")
-    case _:
-        print("Invalid operation selected. Please choose one of (+, -, *, /)
+        case '+':
+            result = num1 + num2
+            print(f"The result is: {result}")
+        case '-':
+            result = num1 - num2
+            print(f"The result is: {result}")
+        case '*':
+            result = num1 * num2
+            print(f"The result is: {result}")
+        case '/':
+            if num2 == 0:
+                print("\nError: Division by zero is not allowed.")
+            else:
+                result = num1 / num2
+                print(f"The result is: {result}")
+        case _:
+            print("\nInvalid operation. Please select a valid operator (+, -, *, /).")
