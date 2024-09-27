@@ -1,6 +1,5 @@
 num1 = int(input("Enter the first number: "))
 num2 = int(input("Enter the second number: "))
-# Prompt the user to select an operation
 print("Select an operation:")
 print("1. Addition (+)")
 print("2. Subtraction (-)")
@@ -24,4 +23,4 @@ match operation:
         else:
             print("Error! Division by zero is not allowed.")
     case _:
-        print("Invalid operation selected. Please choose one of (+, -, *, /).")
+        print("Invalid operation selected. Please choose one of (+, -, *, /)
