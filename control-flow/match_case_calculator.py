@@ -5,7 +5,7 @@ print("1. Addition (+)")
 print("2. Subtraction (-)")
 print("3. Multiplication (*)")
 print("4. Division (/)")
-operation = input("Enter the operation symbol (+, -, *, /): ")
+operation = input("Choose the operation (+, -, *, /): ") 
 match operation:
     case "+":
         result = num1 + num2
