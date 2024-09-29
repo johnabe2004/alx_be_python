@@ -1,9 +1,9 @@
 def display_menu():
-    print("\nShopping List Manager")
-    print("1. Add item")
-    print("2. Remove item")
-    print("3. View list")
-    print("4. Exit")
+    print(f"Shopping List Manager")
+    print(f"1. Add item")
+    print(f"2. Remove item")
+    print(f"3. View list")
+    print(f"4. Exit")
 def add_item(shopping_list):
     item = input("Enter the item to add: ").strip()
     if item:
