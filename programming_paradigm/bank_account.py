@@ -5,6 +5,7 @@ class BankAccount:
     def deposit(self, amount):
         if amount > 0:
             self._account_balance += amount
+            # Format with 1 decimal place
             print(f"Deposited: ${amount:.1f}")
         else:
             print("Deposit amount must be positive.")
@@ -13,6 +14,7 @@ class BankAccount:
         if amount > 0:
             if self._account_balance >= amount:
                 self._account_balance -= amount
+                # Format with 1 decimal place
                 print(f"Withdrew: ${amount:.1f}")
                 return True
             else:
@@ -23,5 +25,7 @@ class BankAccount:
             return False
 
     def display_balance(self):
+        """Display the current balance."""
+        # Format with 1 decimal place
         print(f"Current Balance: ${self._account_balance:.1f}")
 
