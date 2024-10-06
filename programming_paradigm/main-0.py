@@ -1,45 +1,28 @@
 import sys
 from bank_account import BankAccount
 
-
 def main():
-    # Initialize a bank account with optional balance from command line arguments
-    if len(sys.argv) > 1:
-        try:
-            initial_balance = float(sys.argv[1])
-        except ValueError:
-            print("Invalid initial balance. Please enter a valid number.")
-            return
-    else:
-        initial_balance = 0
+    account = BankAccount(100)  # Example starting balance
+    if len(sys.argv) < 2:
+        print("Usage: python main.py <command>:<amount>")
+        print("Commands: deposit, withdraw, display")
+        sys.exit(1)
 
-    account = BankAccount(initial_balance)
-    print(f"Bank account created with initial balance of ${initial_balance:.2f}")
+    command, *params = sys.argv[1].split(':')
+    amount = float(params[0]) if params else None
 
-    # Main command loop
-    while True:
-        print("\nOptions: deposit, withdraw, balance, exit")
-        user_input = input("Enter a command: ").lower()
-
-        if user_input == "deposit":
-            amount = float(input("Enter amount to deposit: "))
-            account.deposit(amount)
-
-        elif user_input == "withdraw":
-            amount = float(input("Enter amount to withdraw: "))
-            account.withdraw(amount)
-
-        elif user_input == "balance":
-            account.display_balance()
-
-        elif user_input == "exit":
-            print("Exiting the program.")
-            break
-
+    if command == "deposit" and amount is not None:
+        account.deposit(amount)
+        print(f"Deposited: ${amount}")
+    elif command == "withdraw" and amount is not None:
+        if account.withdraw(amount):
+            print(f"Withdrew: ${amount}")
         else:
-            print("Invalid command. Please choose one of the available options.")
-
+            print("Insufficient funds.")
+    elif command == "display":
+        account.display_balance()
+    else:
+        print("Invalid command.")
 
 if __name__ == "__main__":
     main()
-
