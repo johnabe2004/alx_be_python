@@ -15,7 +15,7 @@ class Book:
         return f"Book('{self.title}', '{self.author}', {self.year})"
 
 if __name__ == "__main__":
-    book1 = Book("To Kill a Mockingbird", "Harper Lee", 1960)
+    book1 = Book("1984", "George Orwell", 1949)
     print(str(book1))
     print(repr(book1))
     del book1
